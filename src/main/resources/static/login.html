@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - CarReviewHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="split-auth-container">
+        <div class="auth-panel login-image-panel">
+            <div class="auth-overlay"></div>
+            <div class="auth-branding">
+                <h1>Welcome Back</h1>
+                <p>The journey to your next car continues here.</p>
+            </div>
+        </div>
+        <div class="auth-panel auth-form-panel">
+            <div class="auth-form-card">
+                <h2>Member Login</h2>
+                <form action="/login" method="post">
+                    <div id="error-message" class="error-text"></div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="review-btn large-btn">Sign In</button>
+                </form>
+                <div class="auth-switch-link">
+                    <p>No account yet? <a href="/register.html">Create one</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                document.getElementById('error-message').textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarReviewHub - Car Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>CarReviewHub</h1>
+        <nav class="auth-nav">
+            <a id="login-link" href="/login.html" class="auth-btn">Login</a>
+            <a id="register-link" href="/register.html" class="auth-btn">Register</a>
+            <a id="admin-dashboard-link" href="/admin.html" class="auth-btn" style="display: none;">Admin Dashboard</a>
+            <form id="logout-form" action="/logout" method="post" style="display: none;">
+                <button type="submit" class="auth-btn logout-btn">Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Find Your Next Car</h2>
+            <p>Unbiased reviews from real owners to help you decide.</p>
+        </div>
+    </div>
+
+    <main class="content-container">
+        <div class="filter-container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search by model, type, or year...">
+            </div>
+            <div class="sort-bar">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select">
+                    <option value="default">Default</option>
+                    <option value="rating-desc">Rating: High to Low</option>
+                    <option value="rating-asc">Rating: Low to High</option>
+                    <option value="year-desc">Year: Newest First</option>
+                    <option value="year-asc">Year: Oldest First</option>
+                </select>
+                <label for="page-size-select">Show:</label>
+                <select id="page-size-select">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                </select>
+                <span>per page</span>
+            </div>
+        </div>
+
+        <div id="vehicle-list"></div>
+        <div id="pagination-controls" class="pagination-controls"></div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

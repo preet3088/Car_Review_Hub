@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a Review - CarReviewHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="review-container">
+        <div class="review-card" id="review-card">
+            
+            <div id="auth-prompt" style="display: none; text-align: center;">
+                <div class="auth-prompt-icon">&#128274;</div>
+                <h2>Authentication Required</h2>
+                <p>You must be logged in to submit a review.</p>
+                <div class="auth-prompt-actions">
+                    <a href="/login.html" class="review-btn">Login to Continue</a>
+                    <a href="/index.html" class="secondary-link">Return to Home</a>
+                </div>
+            </div>
+
+            <div id="review-content-wrapper">
+                <div class="review-car-header" id="review-car-header">
+                    <img id="review-car-image" src="" alt="Car Image" style="display: none;" />
+                    <h2 id="review-car-model">Loading Car Details...</h2>
+                </div>
+                
+                <div id="form-wrapper">
+                    <form id="review-form">
+                        <div id="star-ratings-container"></div>
+                        
+                        <div class="review-text-wrapper">
+                            <label for="review_text">Written Review (Optional):</label>
+                            <textarea id="review_text" name="review_text" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="review-btn">Submit Review</button>
+                    </form>
+
+                    <div class="back-link-wrapper">
+                        <a href="#" id="back-link" class="secondary-link">Go Back</a>
+                    </div>
+                </div>
+
+                <div id="success-message" style="display: none; text-align: center;">
+                    <div class="success-icon">&#10004;</div>
+                    <h2 id="thank-you-heading">Thank You!</h2>
+                    <p>Your review has been submitted successfully.</p>
+                    <a href="/index.html" class="review-btn">Back to Home</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="review.js"></script>
+</body>
+</html>
