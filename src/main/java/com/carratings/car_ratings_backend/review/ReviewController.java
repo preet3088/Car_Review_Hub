@@ -1,10 +1,17 @@
 package com.carratings.car_ratings_backend.review;
 
-import com.carratings.car_ratings_backend.ratingtype.RatingTypeRepository;
-import org.springframework.security.core.Authentication; // Make sure this import is present
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.carratings.car_ratings_backend.ratingtype.RatingTypeRepository;
 
 @RestController
 @RequestMapping("/api/reviews")
@@ -12,6 +19,9 @@ public class ReviewController {
 
     private final ReviewRepository reviewRepository;
     private final RatingTypeRepository ratingTypeRepository;
+    
+    @Autowired
+    private ReviewService reviewService; // Add this service
 
     public ReviewController(ReviewRepository reviewRepository, RatingTypeRepository ratingTypeRepository) {
         this.reviewRepository = reviewRepository;
@@ -32,13 +42,13 @@ public class ReviewController {
             ratingTypeRepository.findByName(ratingTypeName)
                 .ifPresent(rating::setRatingType);
         });
-        
-        // --- THIS IS THE FIX ---
+
         // Use the correct method name 'setUser_name' from your Review.java file
         if (authentication != null && authentication.isAuthenticated()) {
             review.setUser_name(authentication.getName());
         }
 
-        return reviewRepository.save(review);
+        // THIS IS THE KEY CHANGE: Use the service instead of direct repository save
+        return reviewService.saveReview(review);
     }
 }
