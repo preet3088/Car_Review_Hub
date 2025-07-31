@@ -65,10 +65,18 @@ body {
    Welcome Page: Full-Screen Image
    ================================================================= */
 .image-hero-container {
-    position: relative; height: 100vh; width: 100%; display: flex;
-    flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: var(--white-color);
-   .login-image-panel {
+}
+
+/* Background Image Layer */
+.welcome-image-panel {
     background-image: url('/images/welcome.jpg');
     background-size: cover;
     background-position: center;
@@ -81,21 +89,6 @@ body {
     z-index: -1;
 }
 
-}
-
-
-.hero-overlay {
-    position: absolute; top: 0; left: 0; height: 100%; width: 100%;
-    background-color: rgba(0,0,0,0.5); z-index: 1;
-}
-.transparent-header {
-    background: transparent; box-shadow: none; position: absolute;
-    top: 0; left: 0; right: 0; z-index: 2; margin-bottom: 0;
-}
-.transparent-header h1 { color: var(--white-color); }
-.hero-center-content { text-align: center; position: relative; z-index: 2; }
-.hero-center-content h1 { font-size: 3.5em; margin: 0; font-weight: 700; }
-.hero-center-content p { font-size: 1.3em; opacity: 0.9; margin-top: 0.5rem; }
 
 /* =================================================================
    Login Page: Split-Screen Layout
