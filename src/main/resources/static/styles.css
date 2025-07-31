@@ -71,11 +71,12 @@ body {
     .login-image-panel {
     .login-image-panel {
     .login-image-panel {
-    background-image: url('/images/background.jpeg');
+    background-image: url('/images/simple.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* any other styles you need */
+}
+
 }
 
 }
