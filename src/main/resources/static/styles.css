@@ -69,21 +69,21 @@ body {
     flex-direction: column; align-items: center; justify-content: center;
     color: var(--white-color);
     .login-image-panel {
-    .login-image-panel {
-    .login-image-panel {
-    background-image: url('/images/simple.jpeg');
+    background-image: url('/images/Simple.jpeg'); /* or '/images/image.jpg' */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh; /* Full viewport height */
+    width: 100vw;      /* Full viewport width */
+    position: fixed;   /* Optional: makes the background fixed */
+    top: 0;
+    left: 0;
+    z-index: -1;       /* Put it behind your page content */
 }
 
 }
 
-}
 
-}
-
-}
 .hero-overlay {
     position: absolute; top: 0; left: 0; height: 100%; width: 100%;
     background-color: rgba(0,0,0,0.5); z-index: 1;
