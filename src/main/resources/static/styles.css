@@ -69,7 +69,7 @@ body {
     flex-direction: column; align-items: center; justify-content: center;
     color: var(--white-color);
     .login-image-panel {
-    background-image: url('/images/Simple.jpeg'); /* or '/images/image.jpg' */
+    background-image: url('/images/welcome.jpeg'); /* or '/images/image.jpg' */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
