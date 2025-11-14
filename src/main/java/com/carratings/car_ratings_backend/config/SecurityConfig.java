@@ -56,7 +56,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                 .requestMatchers("/api/rating-types/**", "/api/reviews/**").hasAnyRole("USER", "ADMIN")
                 
                 // --- UPDATED: Add /welcome.html to the list of permitted public pages ---
-                .requestMatchers("/", "/welcome.html", "/auth/**", "/login.html", "/register.html", "/*.css", "/*.js", "/review.html", "/review.js").permitAll()
+                .requestMatchers("/", "/welcome.html", "/auth/**", "/login.html", "/register.html", "/*.css", "/*.js", "/review.html", "/review.js","/actuator/health","/actuator/**").permitAll()
                 
                 .anyRequest().authenticated()
             )
